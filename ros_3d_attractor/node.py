@@ -204,6 +204,7 @@ class Node (rclpy.node.Node):
         #   and the offset should be set to match the target point.
         self.declare_parameter('basis', DEFAULT_BASIS)
         self.declare_parameter('offset', [0.0, 0.0, 0.0])
+        self.declare_parameters('weights', [1.0, 1.0, 1.0])
         
         # Define the parameters of the spring-damper system. Default values are 
         # taken from the `constraints` example provided in the Force Dimension 
@@ -316,6 +317,7 @@ class Node (rclpy.node.Node):
                                       velocity=None,
                                       basis=None,
                                       offset=None,
+                                      weights=None,
                                       stiffness=None,
                                       damping=None):
         """ Compute the force due to the attractor, given the current state of 
@@ -341,9 +343,13 @@ class Node (rclpy.node.Node):
         v = to_column(v)
         
         # Create a projection matrix from the attractor basis parameter.
+        # Weighted projection.
         b   = basis if basis else get_parameter('basis')
         B   = numpy.array(b).reshape((3, 3))
-        P_a = B @ linalg.pinv(B)
+        #P_a = B @ linalg.pinv(B)
+        w   = weights if weights else get_parameter('weights')
+        Wr  = numpy.diag(numpy.sqrt(w))
+        P_a = B @ Wr @ linalg.pinv(Wr @ B) @ (Wr @ Wr.T)
         
         # Compute the projection of the position vector onto the attractor 
         # surface -- that is, the permissable plane in which the effector 
