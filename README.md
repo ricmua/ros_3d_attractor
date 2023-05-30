@@ -11,8 +11,9 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 # ROS2 3D attractor
 
-A ROS2 node that generates force commands suitable for attracting a robotic 
-effector to a point, line, or plane embedded in a 3D space.
+This package implements a [force field] that functions like an [attractor], to 
+pull a robotic end effector toward some point, line, or plane in 3D space.
+
 
 ## License
 
@@ -31,4 +32,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 ---------------------------------------------------------------------->
 
 [Neuromechatronics Lab]: https://www.meche.engineering.cmu.edu/faculty/neuromechatronics-lab.html
+
+[attractor]: https://en.wikipedia.org/wiki/Attractor
+
+[force field]: https://en.wikipedia.org/wiki/Force_field_(physics)
 

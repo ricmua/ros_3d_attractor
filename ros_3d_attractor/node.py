@@ -2,18 +2,11 @@
     suitable for attracting a robotic effector to a point, line, or plane 
     embedded in a 3D space.
 
-        "modeled as a spring+damper_ system that pull the device towards its 
-         projection on the constraint segment"
-        K_ is the spring constant, or stiffness_.
-        damper_
-        C is the damping coefficient
-        damping_
-        
-        .. _K: https://en.wikipedia.org/wiki/Spring_(device)#Physics
-        .. _stiffness: https://en.wikipedia.org/wiki/Stiffness
-        .. _spring+damper: https://en.wikipedia.org/wiki/Mass-spring-damper_model
-        .. _damper: https://en.wikipedia.org/wiki/Dashpot
-        .. _damping: https://en.wikipedia.org/wiki/Damping
+The attractor force field is modeled as a [spring+damper] system that pulls the 
+device end effector towards its projection on a specified constraint point, 
+line segment, or plane.
+
+[spring+damper]: https://en.wikipedia.org/wiki/Mass-spring-damper_model
         
 Examples
 --------
