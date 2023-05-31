@@ -14,6 +14,15 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 This package implements a [force field] that functions like an [attractor], to 
 pull a robotic end effector toward some point, line, or plane in 3D space.
 
+See the [system model](doc/markdown/spring_damper.md) documentation for an 
+overview of the equations that define the attractor. See the 
+[configuration](doc/markdown/configuration.md) documentation for information 
+about configuring the parameters for the attractor. Also see the notes about 
+[system stability](doc/markdown/stability.md) and relevant 
+[Force Dimension examples](doc/markdown/force_dimension.md) for further 
+information.
+
+[Installation documentation](doc/markdown/installation.md) forthcoming.
 
 ## License
 
