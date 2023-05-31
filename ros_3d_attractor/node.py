@@ -204,7 +204,7 @@ class Node (rclpy.node.Node):
         #   and the offset should be set to match the target point.
         self.declare_parameter('basis', DEFAULT_BASIS)
         self.declare_parameter('offset', [0.0, 0.0, 0.0])
-        self.declare_parameters('weights', [1.0, 1.0, 1.0])
+        self.declare_parameter('weights', [1.0, 1.0, 1.0])
         
         # Define the parameters of the spring-damper system. Default values are 
         # taken from the `constraints` example provided in the Force Dimension 
