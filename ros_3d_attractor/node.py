@@ -349,7 +349,7 @@ class Node (rclpy.node.Node):
         #P_a = B @ linalg.pinv(B)
         w   = weights if weights else get_parameter('weights')
         Wr  = numpy.diag(numpy.sqrt(w))
-        P_a = B @ Wr @ linalg.pinv(Wr @ B) @ (Wr @ Wr.T)
+        P_a = B @ linalg.pinv(Wr @ B) @ Wr
         
         # Compute the projection of the position vector onto the attractor 
         # surface -- that is, the permissable plane in which the effector 
